@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+//     z-index: 999;
     .company-name {
       width: 100px;
       height: 100%;
@@ -29,15 +30,15 @@
       }
     }
     .hamburger {
-      width: 100px;
+      width: 26px;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-
+      cursor: pointer;
       span {
-        width: 30px;
+        width: 26px;
         height: 3px;
         background-color: #fff;
         margin: 3px;
@@ -46,5 +47,52 @@
   }
   .navbar-slider {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2.8rem;
+    background-color: #000;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    @include CommonPadding;
+    .navbar-contact-container{
+         width: 300px;
+         height: 100px;
+         display: flex;
+         justify-content: space-between;
+         .navbar-social , .navbar-contact{
+          //     background-color:green;
+              width: 45%;
+              h3{
+                   color: $lightWhite;
+                   text-align: right;
+                   @include navbarText;
+                   opacity: 0;
+                   div{
+                        margin-bottom: .4rem;
+                        cursor: pointer;
+                   }
+              }
+         }
+    }
+    .navbar-developer{
+         width: 300px;
+         height: 100px;
+         display: flex;
+         align-items: flex-end;
+         padding-bottom: 2rem;
+         h3{
+              color: $lightWhite;
+              @include navbarText;
+              opacity: 0;
+          //     opacity: 0;
+              span{
+                   font-weight: 600;
+              }
+         }
+    }
   }
 }

@@ -39,41 +39,15 @@
 //font sizes
 
 @mixin navbarText {
-  font-size: 2rem;
+  font-size: 13px;
+  font-weight: 400;
   @media (max-width: $smallLaptop) {
-    font-size: 1.2rem;
-  }
-  @media (max-width: $smallTablet) {
-    font-size: 1rem;
-  }
-}
-@mixin navbarTextTwo {
-  font-size: 3rem;
-  @media (max-width: $smallLaptop) {
-    font-size: 2.6rem;
-  }
-  @media (max-width: $tablet) {
-    font-size: 2rem;
-  }
-  @media (max-width: $smallTablet) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: $phone) {
-    font-size: 1.1rem;
-  }
-}
-@mixin navigationText {
-  font-weight: 300;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  @media (max-width: $phone) {
-    font-size: 0.8rem;
-  }
-}
-@mixin navigationIcon {
-  font-size: 1rem;
-}
 
+  }
+  @media (max-width: $smallTablet) {
+
+  }
+}
 @mixin paragraph {
   font-size: 18px;
   font-weight: 400;
@@ -101,71 +75,18 @@
   }
 }
 
-@mixin boldUppercase {
-  font-size: 3.2rem;
-  text-transform: uppercase;
-  font-weight: 800;
-
-  @media (max-width: $tablet) {
-    font-size: 2rem;
-  }
-  @media (max-width: $smallTablet) {
-    font-size: 1.5rem;
-  }
-}
-
-@mixin projectLandingText {
-  font-size: 10rem;
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  @media (max-width: $smallLaptop) {
-    font-size: 9rem;
-  }
-  @media (max-width: $tablet) {
-    font-size: 7.5rem;
-  }
-  @media (max-width: $smallTablet) {
-    font-size: 4rem;
-  }
-  @media (max-width: $phone) {
-    font-size: 3rem;
-  }
-  @media (max-width: $smallPhone) {
-    font-size: 2.5rem;
-  }
-}
-
-@mixin homeLanding {
-  font-weight: 600;
-  font-size: 2.3rem;
-  @media (max-width: $tablet) {
-    font-size: 1.8rem;
-  }
-  @media (max-width: $smallTablet) {
-    font-size: 1.4rem;
-  }
-  @media (max-width: $extraSmallTablet) {
-    font-size: 1.2rem;
-  }
-  @media (max-width: $bigPhone) {
-    font-size: 1rem;
-  }
-}
-
 @mixin footerSocial {
   font-size: 20px;
   font-weight: 600;
   margin-right: 0.5rem;
   letter-spacing: 0.1px;
-  @media ( max-width : $tablet){
+  @media (max-width: $tablet) {
     font-size: 16px;
   }
-  @media ( max-width : $extraSmallTablet){
+  @media (max-width: $extraSmallTablet) {
     font-size: 14px;
   }
-  @media ( max-width : $bigPhone){
+  @media (max-width: $bigPhone) {
     font-size: 12px;
   }
 }
