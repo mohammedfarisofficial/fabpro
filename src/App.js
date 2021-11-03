@@ -1,9 +1,10 @@
-import './App.css';
+import './styles/globalStyle.scss';
+import Navbar from './componets/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h2>under construction 🔥</h2>
+      <Navbar/>
     </div>
   );
 }
