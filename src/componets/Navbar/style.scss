@@ -2,17 +2,21 @@
 @import "../../styles/styleData.scss";
 .navbar-wrapper {
   width: 100%;
-  height: 2.8rem;
+  height: 5rem;
   position: relative;
   .navbar-menu {
     width: 100%;
     height: 100%;
-    background-color: $black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #EEEEF0;
     @include CommonPadding;
     display: flex;
     align-items: center;
     justify-content: space-between;
-//     z-index: 999;
+    z-index: 99;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.76);
     .company-name {
       width: 100px;
       height: 100%;
@@ -22,77 +26,92 @@
       padding-bottom: 2px;
       h2 {
         font-size: 1.2rem;
-        color: $white;
+        color: $black;
         font-weight: 600;
         span {
           color: $navlogo;
         }
+        @media (max-width: $bigPhone) {
+          font-size: 1rem;
+        }
       }
     }
     .hamburger {
-      width: 26px;
+      width: 34px;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       cursor: pointer;
-      span {
-        width: 26px;
-        height: 3px;
-        background-color: #fff;
+      position: relative;
+      &:hover  > .top-line{
+        transform: translateX(6px);
+      }
+      &:hover  > .bottom-line{
+        transform: translateX(-6px);
+      }
+      div {
+        position: absolute;
+        right: 0;
+        width: 34px;
+        height: 2px;
+        background-color: $black;
         margin: 3px;
+        border-radius: 10px;
+        transition: transform .3s;
+        @media (max-width: $bigPhone) {
+          width: 22px;
+          height: 2px;
+        }
+      }
+      .bottom-line{
+        top: 55%;
+      }
+      .top-line{
+        top: 45%;
       }
     }
   }
-  .navbar-slider {
+  .navbar-slider, .navbar-slider2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 2.8rem;
-    background-color: #000;
-    z-index: -1;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-    @include CommonPadding;
-    .navbar-contact-container{
-         width: 300px;
-         height: 100px;
-         display: flex;
-         justify-content: space-between;
-         .navbar-social , .navbar-contact{
-          //     background-color:green;
-              width: 45%;
-              h3{
-                   color: $lightWhite;
-                   text-align: right;
-                   @include navbarText;
-                   opacity: 0;
-                   div{
-                        margin-bottom: .4rem;
-                        cursor: pointer;
-                   }
-              }
-         }
+    background-color: #EEEEF0;
+    // z-index: -1;
+    @media (max-width: $bigPhone) {
+      flex-direction: column-reverse;
     }
-    .navbar-developer{
-         width: 300px;
-         height: 100px;
-         display: flex;
-         align-items: flex-end;
-         padding-bottom: 2rem;
-         h3{
-              color: $lightWhite;
-              @include navbarText;
-              opacity: 0;
-          //     opacity: 0;
-              span{
-                   font-weight: 600;
-              }
-         }
+    @include CommonPadding;
+    .navbar-contact-container {
+      width: 300px;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      .navbar-social,
+      .navbar-contact {
+        //     background-color:green;
+        width: 45%;
+        height: 2rem;
+        display: none;
+        h3 {
+          color: $black;
+          text-align: right;
+          @include navbarText;
+          opacity: 0;
+          div {
+            margin-bottom: 0.4rem;
+            cursor: pointer;
+            position: relative;
+            height: 1.5rem;
+          }
+        }
+      }
+      @media (max-width: $bigPhone) {
+        width: 100%;
+      }
     }
   }
+}
+.navbar-slider2{
+  z-index: -5;
+  background-color: #ac9689d2 !important;
 }

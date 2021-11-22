@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./style.scss";
 const Navbar = () => {
@@ -6,9 +6,9 @@ const Navbar = () => {
   const [isAnimating, setIsAmimating] = useState(false);
   const [listMenu, setListMenu] = useState(false);
 
-  const linkRef = useRef(null)
+  const linkRef = useRef(null);
 
-  let time = 1;
+  let time = .5;
 
   useEffect(() => {
     if (nav && !isAnimating) {
@@ -20,15 +20,29 @@ const Navbar = () => {
   }, [isAnimating, nav, listMenu]);
 
   //gsap animation
-  const tl = gsap.timeline({ defaults: { duration: time } });
+  const tl = gsap.timeline();
+  // const t2 = gsap.timeline({ defaults: { duration: 1 } });
 
-  tl.to(".navbar-slider", {
-    height: nav ? "15rem" : "2.8rem",
-    ease: "power4.inOut",
-  }).to('h3', {
-    opacity : listMenu ? 1 : 0,
-    duration : 0.1
-  });
+  tl.to(
+    ".navbar-slider2",
+    {
+      height: nav ? "22rem" : "2.8rem",
+      ease: "Expo.inOut",
+      duration: time,
+    },
+    "start"
+  )
+    .to(
+      ".navbar-slider",
+      {
+        height: nav ? "15rem" : "2.8rem",
+        ease: "Expo.inOut",
+        duration: 1.1,
+        boxShadow: nav ? '0px 7px 9px 3px #0000001c' : 'none'
+      })
+
+
+
   //hamburger toggle
   const hamburgerHandler = () => {
     if (isAnimating) {
@@ -49,30 +63,19 @@ const Navbar = () => {
           </h2>
         </div>
         <div onClick={hamburgerHandler} className="hamburger">
-          <span></span>
-          <span></span>
+          <div className='line bottom-line'></div>
+          <div className='line top-line'></div>
         </div>
       </div>
       <div className="navbar-slider">
         <div className="navbar-contact-container">
           <div className="navbar-social">
-            <h3>
-              <div ref={linkRef} >Youtube</div>
-              <div ref={linkRef} >Instagram</div>
-            </h3>
           </div>
           <div className="navbar-contact">
-            <h3 ref={linkRef}>
-              <div  >Recent projects</div>
-              <div ref={linkRef} >About us</div>
-              <div ref={linkRef} >Contact Us</div>
-            </h3>
           </div>
         </div>
-        <div className="navbar-developer">
-             <h3 ref={linkRef} >Designed and developed <span>Mohammed Faris</span></h3>
-        </div>
       </div>
+      <div className="navbar-slider2"></div>
     </div>
   );
 };
