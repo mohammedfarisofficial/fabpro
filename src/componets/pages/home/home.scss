@@ -1,21 +1,24 @@
 .home-landing{
      width: 100%;
      height: 100vh;
-     background-color:lightgray;
 }
 .home-gallery{
      width: 100%;
      height: 100vh;
-     background-color: lightgreen;
      position: relative;
 }
 .box{
      width: 300px;
      height: 200px;
-     background-color: rgb(255, 9, 9);
+     background-color: rgb(145, 83, 83);
      position: absolute;
 }
-
+.overlay{
+     position: absolute;
+     left: 0;
+     top: 0;
+}
 .hide-overlay{
      visibility: hidden;
+     pointer-events: none;
 }
